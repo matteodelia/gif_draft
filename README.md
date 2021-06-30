@@ -1,1 +1,0 @@
-# gif_draft
