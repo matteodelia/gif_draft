@@ -1,118 +1,110 @@
 jQuery(document).ready(function($) {
-  anim_blue_gif();
-  anim_black_gif();
-  anim_red_gif();
-  anim_green_gif();
+  anim_gif();
 });
 
-function anim_blue_gif() {
-  var ani = {
-    frame_height: (window.innerWidth * 0.15),
-    num_frames: 67,
-    loop_frame: 39,
-    frame_duration: 125,
-    cur_frame: 0
-  };
+var gif = {
+  frame_height: (window.innerWidth * 0.15),
+  num_frames: 67,
+  loop_frame: 39,
+  frame_duration: 125
+};
+
+var gif1 = {
+  cur_frame: 0
+};
+
+var gif2 = {
+  cur_frame: 0
+};
+
+var gif3 = {
+  cur_frame: 0
+};
+
+var gif4 = {
+  cur_frame: 0
+};
+
+function anim_gif() {
   window.setInterval(
     function() {
       $('#blue').css('top',
-        (-ani.frame_height * ani.cur_frame) + 'px'
+        (-gif.frame_height * gif1.cur_frame) + 'px'
       );
-      ani.cur_frame = (ani.cur_frame + 1) % ani.num_frames;
-      if (ani.cur_frame == ani.loop_frame) {
-        var rand = Math.floor(Math.random() * 10);
-        if (rand <= 2) {
-          ani.cur_frame = 39;
-        } else {
-          ani.cur_frame = 0;
-        };
-      };
-      // if (ani.cur_frame == 0) ani.cur_frame = ani.loop_frame;
-    },
-    ani.frame_duration
-  );
-}
+      gif1.cur_frame = (gif1.cur_frame + 1) % gif.num_frames;
 
-function anim_black_gif() {
-  var ani = {
-    frame_height: (window.innerWidth * 0.15),
-    num_frames: 67,
-    loop_frame: 39,
-    frame_duration: 125,
-    cur_frame: 0
-  };
-  window.setInterval(
-    function() {
       $('#black').css('top',
-        (-ani.frame_height * ani.cur_frame) + 'px'
+        (-gif.frame_height * gif2.cur_frame) + 'px'
       );
-      ani.cur_frame = (ani.cur_frame + 1) % ani.num_frames;
-      if (ani.cur_frame == ani.loop_frame) {
-        var rand = Math.floor(Math.random() * 10);
-        if (rand <= 2) {
-          ani.cur_frame = 39;
-        } else {
-          ani.cur_frame = 0;
-        };
-      };
-      // if (ani.cur_frame == 0) ani.cur_frame = ani.loop_frame;
-    },
-    ani.frame_duration
-  );
-}
+      gif2.cur_frame = (gif2.cur_frame + 1) % gif.num_frames;
 
-function anim_red_gif() {
-  var ani = {
-    frame_height: (window.innerWidth * 0.15),
-    num_frames: 67,
-    loop_frame: 39,
-    frame_duration: 125,
-    cur_frame: 0
-  };
-  window.setInterval(
-    function() {
       $('#red').css('top',
-        (-ani.frame_height * ani.cur_frame) + 'px'
+        (-gif.frame_height * gif3.cur_frame) + 'px'
       );
-      ani.cur_frame = (ani.cur_frame + 1) % ani.num_frames;
-      if (ani.cur_frame == ani.loop_frame) {
-        var rand = Math.floor(Math.random() * 10);
-        if (rand <= 2) {
-          ani.cur_frame = 39;
-        } else {
-          ani.cur_frame = 0;
-        };
-      };
-      // if (ani.cur_frame == 0) ani.cur_frame = ani.loop_frame;
-    },
-    ani.frame_duration
-  );
-}
+      gif3.cur_frame = (gif3.cur_frame + 1) % gif.num_frames;
 
-function anim_green_gif() {
-  var ani = {
-    frame_height: (window.innerWidth * 0.15),
-    num_frames: 67,
-    loop_frame: 39,
-    frame_duration: 125,
-    cur_frame: 0
-  };
-  window.setInterval(
-    function() {
       $('#green').css('top',
-        (-ani.frame_height * ani.cur_frame) + 'px'
+        (-gif.frame_height * gif4.cur_frame) + 'px'
       );
-      ani.cur_frame = (ani.cur_frame + 1) % ani.num_frames;
-      if (ani.cur_frame == ani.loop_frame) {
-        var rand = Math.floor(Math.random() * 10);
-        if (rand <= 2) {
-          ani.cur_frame = 39;
+      gif4.cur_frame = (gif4.cur_frame + 1) % gif.num_frames;
+
+      if (gif1.cur_frame == gif.loop_frame || gif2.cur_frame == gif.loop_frame || gif3.cur_frame == gif.loop_frame || gif4.cur_frame == gif.loop_frame) {
+        var scelta_gif = Math.floor(Math.random() * 4);
+        if (scelta_gif == 0) {
+          var rand = Math.floor(Math.random() * 8);
+          if (rand <= 5) {
+            gif1.cur_frame = 39;
+            gif2.cur_frame = 0;
+            gif3.cur_frame = 0;
+            gif4.cur_frame = 0;
+          } else {
+            gif1.cur_frame = 0;
+            gif2.cur_frame = 0;
+            gif3.cur_frame = 0;
+            gif4.cur_frame = 0;
+          };
+        } else if (scelta_gif == 1) {
+          var rand = Math.floor(Math.random() * 8);
+          if (rand <= 5) {
+            gif1.cur_frame = 0;
+            gif2.cur_frame = 39;
+            gif3.cur_frame = 0;
+            gif4.cur_frame = 0;
+          } else {
+            gif1.cur_frame = 0;
+            gif2.cur_frame = 0;
+            gif3.cur_frame = 0;
+            gif4.cur_frame = 0;
+          };
+        } else if (scelta_gif == 2) {
+          var rand = Math.floor(Math.random() * 8);
+          if (rand <= 5) {
+            gif1.cur_frame = 0;
+            gif2.cur_frame = 0;
+            gif3.cur_frame = 39;
+            gif4.cur_frame = 0;
+          } else {
+            gif1.cur_frame = 0;
+            gif2.cur_frame = 0;
+            gif3.cur_frame = 0;
+            gif4.cur_frame = 0;
+          };
         } else {
-          ani.cur_frame = 0;
+          var rand = Math.floor(Math.random() * 8);
+          if (rand <= 5) {
+            gif1.cur_frame = 0;
+            gif2.cur_frame = 0;
+            gif3.cur_frame = 0;
+            gif4.cur_frame = 39;
+          } else {
+            gif1.cur_frame = 0;
+            gif2.cur_frame = 0;
+            gif3.cur_frame = 0;
+            gif4.cur_frame = 0;
+          };
         };
       };
-      // if (ani.cur_frame == 0) ani.cur_frame = ani.loop_frame;
     },
-    ani.frame_duration
+    gif.frame_duration
   );
-}
+};
